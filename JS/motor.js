@@ -1,4 +1,4 @@
-contador=1;
+
 var pizzas=[
     {
         foto:"IMG/1.png",
@@ -23,10 +23,10 @@ var pizzas=[
         preciopequena:8,
         preciomediana:12,
         preciogrande:14
-    },
+    }
 ]
 
-
+var pedidos=[];
 pintar();
 function pintar(){
     for(let x=0 ;x<pizzas.length; x++){
@@ -43,26 +43,42 @@ function pintar(){
         </div>
         <div class=botones>
         <div class="boton">
-        <button id="resta" onclick="resta(${x})"> - </button>
+        <button onclick="resta(${x})"> - </button>
     </div>
     <div id="numeros${x}">1</div>
     <div class="boton">
-        <button id="suma" onclick="suma(${x})"> + </button>
+        <button onclick="suma(${x})"> + </button>
         </div>
         </div>
         <div class="elegir">
             <input type="radio" name="tamano${x}" id="tamanopeq${x}">Pequeña
             <input type="radio" name="tamano${x}" id="tamanomed${x}">Mediana
             <input type="radio" name="tamano${x}" id="tamanogra${x}">Grande
-        </div>`
+        </div>
+        <div class="botoncito">
+        <div onclick="pedir(${x})"> Pedir </div>
+    </div>`
+
+        
     }
 }
 
-function suma(){
-    document.getElementById("suma").innerHTML=contador;
-    contador++;
-}
-function resta(){
-    document.getElementById("resta").innerHTML=contador;
-    contador--;
-}
+
+function suma(posicion){
+
+    let valor = parseInt(document.getElementById(`numeros${posicion}`).innerHTML);
+    valor++;
+    document.getElementById(`numeros${posicion}`).innerHTML=valor;
+    
+    }
+
+function resta(posicion){
+
+    let valor = parseInt(document.getElementById(`numeros${posicion}`).innerHTML);
+    if (valor>1){
+    valor--;
+    }
+    document.getElementById(`numeros${posicion}`).innerHTML=valor;
+
+    
+    }

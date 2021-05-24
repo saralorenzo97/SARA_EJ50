@@ -26,6 +26,9 @@
     border: 2px solid pink;
     width: 200px;
     height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .foto{
@@ -58,17 +61,30 @@
     border: 1px solid orange;
     align-items: center;
     width: 15%;
+
 }
 
 button{
     border-radius: 100%;
     border: none;
-    background-color: red;
+    background-color: rosybrown;
     font-size: 1.25em;
     width: 40px;
     height: 35px;
+    cursor: pointer;
 }
 
 .pedido{
     border: 1px solid red;
+}
+
+.botoncito{
+    padding: 5px 12px;
+    background-color: rosybrown;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    cursor: pointer;
 }
