@@ -57,7 +57,9 @@ function pintar(){
         </div>
         <div class="botoncito">
         <div onclick="pedir(${x})"> Pedir </div>
-    </div>`
+    </div>
+    
+    <div class="precio" id="precio${x}"> </div>`
 
         
     }
@@ -80,5 +82,27 @@ function resta(posicion){
     }
     document.getElementById(`numeros${posicion}`).innerHTML=valor;
 
-    
     }
+
+    
+function pedir(posicion) {
+
+    canti=parseInt(document.getElementById(`numeros${posicion}`).innerHTML);
+    let valor;
+    if (document.getElementById(`tamanopeq${posicion}`).checked){
+        valor = productos[posicion].pequena;
+        mitamano="Pequeña"
+    }
+    if (document.getElementById(`tamanomed${posicion}`).checked){
+         valor = productos[posicion].mediana;
+         mitamano="Mediana"
+    }
+    if (document.getElementById(`tamanogra${posicion}`).checked){
+         valor = productos[posicion].grande;
+         mitamano="Grande"
+    }
+    
+    
+        
+    }
+    
