@@ -101,8 +101,5 @@ function pedir(posicion) {
          valor = productos[posicion].grande;
          mitamano="Grande"
     }
-    
-    
-        
-    }
+}
     
